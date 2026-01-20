@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RilarilAcademy.io</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0095f6;
+            --secondary-color: #8e8e8e;
+            --border-color: #dbdbdb;
+            --text-color: #262626;
+            --background-color: #fafafa;
+            --white: #ffffff;
+            --red: #ed4956;
+            --instagram-gradient: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            --story-gradient: linear-gradient(45deg, #fdf497, #fdf497, #fd5949, #d6249f, #285AEB);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            padding-top: 60px;
+            line-height: 1.5;
+        }
+        
+        /* Container utama */
+        .main-container {
+            max-width: 935px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        /* Navbar Responsif */
+        .navbar {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-content {
+            max-width: 975px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Cambria', cursive;
+            font-size: 24px;
+            background: var(--instagram-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: normal;
+            flex-shrink: 0;
+        }
+        
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        
+        .nav-icons i {
+            font-size: 20px;
+            color: var(--text-color);
+            cursor: pointer;
+            position: relative;
+            transition: opacity 0.2s;
+        }
+        
+        .nav-icons i:hover {
+            opacity: 0.7;
+        }
+        
+        .notification-badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background-color: var(--red);
+            color: var(--white);
+            font-size: 10px;
+            min-width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            padding: 0 4px;
+        }
+        
+        /* Main Content Area */
+        .profile-section {
+            padding: 30px 20px 0;
+            max-width: 935px;
+            margin: 0 auto;
+        }
+        
+        /* Profile Header - Responsif */
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+        }
+        
+        @media (min-width: 768px) {
+            .profile-header {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+        
+        .profile-image-container {
+            flex-shrink: 0;
+            margin: 0 auto 20px;
+            width: 150px;
+            height: 150px;
+        }
+        
+        @media (min-width: 768px) {
+            .profile-image-container {
+                margin: 0 100px 0 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-image-container {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            background: var(--story-gradient) border-box;
+            padding: 2px;
+            object-fit: cover;
+        }
+        
+        .profile-info {
+            flex: 1;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .profile-info {
+                text-align: left;
+            }
+        }
+        
+        .profile-top-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        
+        @media (min-width: 768px) {
+            .profile-top-row {
+                justify-content: flex-start;
+            }
+        }
+        
+        .username {
+            font-size: 28px;
+            font-weight: 300;
+            color: var(--text-color);
+        }
+        
+        @media (max-width: 480px) {
+            .username {
+                font-size: 24px;
+            }
+        }
+        
+        .btn {
+            padding: 6px 16px;
+            border: 1px solid var(--border-color);
+            background-color: var(--white);
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 32px;
+        }
+        
+        .btn:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #0074cc;
+        }
+        
+        .profile-actions-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (min-width: 768px) {
+            .profile-actions-row {
+                justify-content: flex-start;
+            }
+        }
+        
+        .stats-container {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (min-width: 768px) {
+            .stats-container {
+                justify-content: flex-start;
+                gap: 40px;
+            }
+        }
+        
+        .stat-item {
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-weight: 700;
+            display: block;
+            font-size: 18px;
+        }
+        
+        .bio-section {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .bio-section {
+                margin: 0;
+            }
+        }
+        
+        .bio-name {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .bio-text {
+            white-space: pre-line;
+            font-size: 16px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .bio-link {
+            color: #00376b;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+        
+        .bio-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* QUICK ACTIONS - IKON WARNA HITAM */
+        .quick-actions-section {
+            margin: 30px 0 40px;
+        }
+        
+        .section-title {
+            font-weight: 600;
+            margin-bottom: 16px;
+            font-size: 16px;
+            padding: 0 20px;
+        }
+        
+        .quick-actions-scroll {
+            display: flex;
+            gap: 25px;
+            padding: 0 20px 10px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .quick-actions-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Desktop: center the actions */
+        @media (min-width: 768px) {
+            .quick-actions-scroll {
+                justify-content: center;
+                gap: 40px;
+            }
+        }
+        
+        .quick-action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .quick-action-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* PERUBAHAN: SEMUA IKON WARNA HITAM */
+        .quick-action-icon {
+            font-size: 32px; /* Ukuran ikon lebih besar */
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px; /* Tinggi tetap untuk alignment */
+            width: 60px; /* Lebar tetap untuk alignment */
+            transition: all 0.3s;
+        }
+        
+        /* SEMUA IKON WARNA HITAM - PERUBAHAN UTAMA */
+        .quick-action-icon i {
+            color: var(--text-color) !important; /* Warna hitam dari variabel */
+        }
+        
+        /* Hapus warna khusus untuk ikon individual */
+        
+        @media (max-width: 480px) {
+            .quick-action-icon {
+                font-size: 28px;
+                height: 50px;
+                width: 50px;
+            }
+        }
+        
+        .quick-action-label {
+            font-size: 13px;
+            color: var(--text-color);
+            text-align: center;
+            max-width: 80px;
+            word-break: break-word;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+        
+        /* Highlights Section */
+        .highlights-section {
+            margin-bottom: 44px;
+            overflow: hidden;
+        }
+        
+        .highlights-scroll {
+            display: flex;
+            gap: 25px;
+            padding: 0 20px 10px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .highlights-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .highlights-scroll {
+                justify-content: center;
+                gap: 40px;
+            }
+        }
+        
+        .highlight-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .highlight-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .highlight-circle {
+            width: 77px;
+            height: 77px;
+            border-radius: 50%;
+            background: var(--story-gradient);
+            padding: 3px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @media (max-width: 480px) {
+            .highlight-circle {
+                width: 64px;
+                height: 64px;
+            }
+        }
+        
+        .highlight-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: var(--text-color);
+            overflow: hidden;
+        }
+        
+        .highlight-label {
+            font-size: 13px;
+            color: var(--text-color);
+            text-align: center;
+            max-width: 80px;
+            word-break: break-word;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+        
+        /* Tabs Navigation */
+        .tabs-navigation {
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid var(--border-color);
+            position: relative;
+        }
+        
+        .tab-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 0;
+            flex: 1;
+            max-width: 200px;
+            cursor: pointer;
+            color: var(--secondary-color);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-top: 1px solid transparent;
+            margin-top: -1px;
+            background: none;
+            border: none;
+            outline: none;
+            transition: color 0.2s;
+        }
+        
+        .tab-button.active {
+            color: var(--text-color);
+            border-top-color: var(--text-color);
+        }
+        
+        .tab-button i {
+            margin-right: 6px;
+            font-size: 12px;
+        }
+        
+        /* POSTS GRID - GAMBAR BESAR DI HP, LIKE/COMMENT JELAS */
+        .posts-grid-container {
+            padding: 0;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            width: 100%;
+        }
+        
+        @media (max-width: 767px) {
+            .posts-grid {
+                gap: 1px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .posts-grid {
+                gap: 28px;
+            }
+        }
+        
+        .post-item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            background-color: #efefef;
+            aspect-ratio: 1 / 1;
+        }
+        
+        .post-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .post-item:hover .post-image {
+            transform: scale(1.05);
+        }
+        
+        .post-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            font-weight: 600;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .post-item:hover .post-overlay,
+        .post-item:active .post-overlay {
+            display: flex;
+            opacity: 1;
+        }
+        
+        @media (max-width: 767px) {
+            .post-overlay {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+            
+            .post-item:active .post-overlay {
+                display: flex;
+                opacity: 1;
+            }
+        }
+        
+        .post-stats {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        
+        .post-stats span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+            padding: 5px 10px;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 767px) {
+            .post-stats {
+                gap: 15px;
+            }
+            
+            .post-stats span {
+                font-size: 18px;
+                gap: 10px;
+                padding: 8px 15px;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            
+            .post-stats i {
+                font-size: 20px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .post-stats span {
+                font-size: 16px;
+            }
+            
+            .post-stats i {
+                font-size: 18px;
+            }
+        }
+        
+        .post-stats .fa-heart {
+            color: #ff375e;
+        }
+        
+        .post-stats .fa-comment {
+            color: #ffffff;
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .modal-body {
+            padding: 8px 0;
+        }
+        
+        .share-option {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .share-option:hover {
+            background-color: #fafafa;
+        }
+        
+        .share-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 16px;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .share-text {
+            flex: 1;
+        }
+        
+        .share-label {
+            font-size: 14px;
+            font-weight: 500;
+            display: block;
+        }
+        
+        .share-description {
+            font-size: 12px;
+            color: var(--secondary-color);
+            margin-top: 2px;
+            display: block;
+        }
+        
+        .modal-footer {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
+        /* WhatsApp Popup */
+        .whatsapp-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .popup-content {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        .popup-title {
+            margin: 0 0 10px 0;
+            color: var(--text-color);
+            font-size: 18px;
+        }
+        
+        .popup-message {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .popup-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .popup-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            flex: 1;
+            max-width: 150px;
+        }
+        
+        .btn-cancel {
+            background-color: #efefef;
+            color: var(--text-color);
+        }
+        
+        .btn-cancel:hover {
+            background-color: #dbdbdb;
+        }
+        
+        .btn-confirm {
+            background-color: #25D366;
+            color: var(--white);
+        }
+        
+        .btn-confirm:hover {
+            background-color: #1da851;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--secondary-color);
+            font-size: 12px;
+            margin-top: 50px;
+        }
+        
+        .footer-links {
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .footer-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 12px;
+        }
+        
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 767px) {
+            .profile-section {
+                padding: 20px 10px 0;
+            }
+            
+            .section-title {
+                padding: 0 10px;
+            }
+            
+            .quick-actions-scroll,
+            .highlights-scroll {
+                padding: 0 10px 10px;
+                gap: 20px;
+            }
+            
+            .quick-action-icon {
+                font-size: 28px;
+                height: 50px;
+                width: 50px;
+            }
+            
+            .quick-action-label,
+            .highlight-label {
+                font-size: 12px;
+                max-width: 70px;
+            }
+            
+            .highlight-circle {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .posts-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .quick-actions-scroll,
+            .highlights-scroll {
+                gap: 15px;
+            }
+            
+            .quick-action-icon {
+                font-size: 24px;
+                height: 45px;
+                width: 45px;
+            }
+            
+            .highlight-circle {
+                width: 65px;
+                height: 65px;
+            }
+            
+            .highlight-inner {
+                font-size: 20px;
+            }
+            
+            .posts-grid {
+                gap: 0.5px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .quick-actions-scroll,
+            .highlights-scroll {
+                gap: 50px;
+            }
+        }
+        
+        /* Touch optimization for mobile */
+        .post-item {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Mobile tap feedback */
+        @media (max-width: 767px) {
+            .post-item:active {
+                opacity: 0.9;
+            }
+        }
+        
+        /* Custom notification */
+        .custom-notification {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 3000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.3s ease;
+            max-width: 90%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -20px);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">RilarilHub</div>
+            <div class="nav-icons">
+                <i class="far fa-heart" title="Aktivitas"></i>
+                <i class="far fa-bell" title="Notifikasi">
+                    <span class="notification-badge">3</span>
+                </i>
+                <i class="fab fa-facebook-messenger" id="whatsapp-chat" title="Chat"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Popup -->
+    <div id="whatsapp-popup" class="whatsapp-popup">
+        <div class="popup-content">
+            <h3 class="popup-title">Buka WhatsApp?</h3>
+            <p class="popup-message">Anda akan dialihkan ke WhatsApp untuk mengirim pesan.</p>
+            <div class="popup-buttons">
+                <button id="cancel-btn" class="popup-button btn-cancel">Batal</button>
+                <button id="confirm-btn" class="popup-button btn-confirm">Buka WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-image-container">
+                    <img src="IMG-20260115-WA0003.jpg" alt="Profile Picture" class="profile-image">
+                </div>
+                
+                <div class="profile-info">
+                    <div class="profile-top-row">
+                        <h1 class="username">RilarilAcademy</h1>
+                        <button class="btn btn-primary">Edit Profile</button>
+                        <button class="btn" title="Pengaturan"><i class="fas fa-cog"></i></button>
+                    </div>
+                    
+                    <div class="profile-actions-row">
+                        <button class="btn btn-primary">Follow</button>
+                        <button class="btn" id="share-profile-btn">Share Profile</button>
+                    </div>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number">6</span>
+                            posts
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30.5JT</span>
+                            followers
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10</span>
+                            following
+                        </div>
+                    </div>
+                    
+                    <div class="bio-section">
+                        <div class="bio-name">RilarilAcademy</div>
+                        <div class="bio-text">Academy Indonesia Internasional 📖
+Kasih Sayang Moral dan Cinta Belajar📚
+📍Semarang, Indonesia
+✉️ RilarilAcademy.@email.com
+👇 Cek Academy aku di bawah ya!</div>
+                        <a href="https://instagram.com/rilaril.id" class="bio-link" target="_blank" rel="noopener noreferrer">linktr.ee/academyrilaril</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUICK ACTIONS SECTION - PERBAIKAN: SEMUA IKON WARNA HITAM -->
+            <div class="quick-actions-section">
+                <h2 class="section-title">Activity</h2>
+                <div class="quick-actions-scroll">
+                    <div class="quick-action-item" id="follow-action">
+                        <div class="quick-action-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="quick-action-label">Follow</div>
+                    </div>
+                    
+                    <div class="quick-action-item" id="message-action">
+                        <div class="quick-action-icon">
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <div class="quick-action-label">Message</div>
+                    </div>
+                    
+                    <div class="quick-action-item" id="mention-action">
+                        <div class="quick-action-icon">
+                            <i class="fas fa-at"></i>
+                        </div>
+                        <div class="quick-action-label">Mention</div>
+                    </div>
+                    
+                    <div class="quick-action-item" id="share-action">
+                        <div class="quick-action-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="quick-action-label">Share Profile</div>
+                    </div>
+                    
+                    <div class="quick-action-item" id="email-action">
+                        <div class="quick-action-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="quick-action-label">Email</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Highlights Section -->
+            <div class="highlights-section">
+                <h2 class="section-title">Highlight Story</h2>
+                <div class="highlights-scroll">
+                    <div class="highlight-item">
+                        <div class="highlight-circle">
+                            <div class="highlight-inner">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                        </div>
+                        <div class="highlight-label">Labs</div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-circle">
+                            <div class="highlight-inner">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                        </div>
+                        <div class="highlight-label">Kantin</div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-circle">
+                            <div class="highlight-inner">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                        </div>
+                        <div class="highlight-label">Culture Hub</div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-circle">
+                            <div class="highlight-inner">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                        <div class="highlight-label">class</div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-circle">
+                            <div class="highlight-inner">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="highlight-label">New</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="tabs-navigation">
+                <button class="tab-button active">
+                    <i class="fas fa-table-cells"></i> Posts
+                </button>
+                <button class="tab-button">
+                    <i class="fas fa-clapperboard"></i> Reels
+                </button>
+                <button class="tab-button">
+                    <i class="fas fa-user-tag"></i> Tagged
+                </button>
+            </div>
+
+            <!-- Posts Grid -->
+            <div class="posts-grid-container">
+                <div class="posts-grid">
+                    <div class="post-item">
+                        <img src="IMG-20260119-WA0019.jpg" alt="Post 1" class="post-image">
+                        <div class="post-overlay">
+                            <div class="post-stats">
+                                <span><i class="fas fa-heart"></i> 52,300</span>
+                                <span><i class="fas fa-comment"></i> 3,250</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-item">
+                        <img src="IMG-20260119-WA0020.jpg" alt="Post 2" class="post-image">
+                        <div class="post-overlay">
+                            <div class="post-stats">
+                                <span><i class="fas fa-heart"></i> 46,500</span>
+                                <span><i class="fas fa-comment"></i> 2,813</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-item">
+                        <img src="IMG-20260119-WA0026.jpg" alt="Post 3" class="post-image">
+                        <div class="post-overlay">
+                            <div class="post-stats">
+                                <span><i class="fas fa-heart"></i> 47,200</span>
+                                <span><i class="fas fa-comment"></i> 2,521</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-item">
+                        <img src="IMG-20260119-WA0027.jpg" alt="Post 4" class="post-image">
+                        <div class="post-overlay">
+                            <div class="post-stats">
+                                <span><i class="fas fa-heart"></i> 50,500</span>
+                                <span><i class="fas fa-comment"></i> 3,010</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-item">
+                        <img src="IMG-20260119-WA0028.jpg" alt="Post 5" class="post-image">
+                        <div class="post-overlay">
+                            <div class="post-stats">
+                                <span><i class="fas fa-heart"></i> 49,200</span>
+                                <span><i class="fas fa-comment"></i> 1,357</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-item">
+                        <img src="IMG-20260119-WA0029.jpg" alt="Post 6" class="post-image">
+                        <div class="post-overlay">
+                            <div class="post-stats">
+                                <span><i class="fas fa-heart"></i> 42,300</span>
+                                <span><i class="fas fa-comment"></i> 3,556</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Share Profile Modal -->
+    <div class="modal-overlay" id="share-modal">
+        <div class="modal-content fade-in">
+            <div class="modal-header">
+                Share Profile
+            </div>
+            <div class="modal-body">
+                <button class="share-option" id="share-link">
+                    <div class="share-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="share-text">
+                        <span class="share-label">Copy Link</span>
+                        <span class="share-description">Copy profile link to clipboard</span>
+                    </div>
+                </button>
+                
+                <button class="share-option" id="share-qr">
+                    <div class="share-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <div class="share-text">
+                        <span class="share-label">QR Code</span>
+                        <span class="share-description">Generate QR code for this profile</span>
+                    </div>
+                </button>
+                
+                <button class="share-option" id="share-message">
+                    <div class="share-icon">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="share-text">
+                        <span class="share-label">Share to Direct</span>
+                        <span class="share-description">Send profile via Instagram Direct</span>
+                    </div>
+                </button>
+                
+                <button class="share-option" id="share-other">
+                    <div class="share-icon">
+                        <i class="fas fa-share-square"></i>
+                    </div>
+                    <div class="share-text">
+                        <span class="share-label">Share to Other Apps</span>
+                        <span class="share-description">Share via WhatsApp, Telegram, etc.</span>
+                    </div>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-cancel" id="close-modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#" class="footer-link">About</a>
+            <a href="#" class="footer-link">Help</a>
+            <a href="#" class="footer-link">Press</a>
+            <a href="#" class="footer-link">API</a>
+            <a href="#" class="footer-link">Jobs</a>
+            <a href="#" class="footer-link">Privacy</a>
+            <a href="#" class="footer-link">Terms</a>
+            <a href="#" class="footer-link">Locations</a>
+            <a href="#" class="footer-link">Language</a>
+            <a href="#" class="footer-link">Meta Verified</a>
+        </div>
+        <div class="copyright">
+            © 2026 RilarilHub by RilarilAcademy
+        </div>
+    </footer>
+
+    <script>
+        // WhatsApp Popup
+        document.addEventListener('DOMContentLoaded', function() {
+            const whatsappIcon = document.getElementById('whatsapp-chat');
+            const popup = document.getElementById('whatsapp-popup');
+            const cancelBtn = document.getElementById('cancel-btn');
+            const confirmBtn = document.getElementById('confirm-btn');
+            
+            const phoneNumber = '62895384092355';
+            const defaultMessage = 'Hallo ada yang ingin saya tanyakan tentang Rilaril Academy';
+            
+            whatsappIcon.addEventListener('click', function(e) {
+                e.preventDefault();
+                popup.style.display = 'flex';
+            });
+            
+            cancelBtn.addEventListener('click', function() {
+                popup.style.display = 'none';
+            });
+            
+            confirmBtn.addEventListener('click', function() {
+                const encodedMessage = encodeURIComponent(defaultMessage);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+                popup.style.display = 'none';
+            });
+            
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) {
+                    popup.style.display = 'none';
+                }
+            });
+        });
+
+        // Tab switching functionality
+        document.querySelectorAll('.tab-button').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.tab-button').forEach(t => {
+                    t.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Double click to like posts dengan animasi lebih baik
+        document.querySelectorAll('.post-item').forEach(post => {
+            post.addEventListener('dblclick', function() {
+                const heartIcon = this.querySelector('.fa-heart');
+                const likesCount = this.querySelector('.post-stats span:first-child');
+                
+                // Animasi like
+                heartIcon.style.color = '#ff375e';
+                heartIcon.style.transform = 'scale(1.3)';
+                
+                let currentLikes = parseInt(likesCount.textContent.replace(/,/g, '').match(/\d+/)[0]);
+                let newLikes = currentLikes + 1;
+                let formattedLikes = newLikes.toLocaleString('id-ID');
+                
+                likesCount.innerHTML = `<i class="fas fa-heart" style="color:#ff375e"></i> ${formattedLikes}`;
+                
+                // Reset animasi
+                setTimeout(() => {
+                    heartIcon.style.transform = 'scale(1)';
+                }, 300);
+            });
+            
+            // Di HP, tap untuk melihat like/comment (bukan hanya hover)
+            if (window.matchMedia("(max-width: 767px)").matches) {
+                let tapTimer;
+                let tapped = false;
+                
+                post.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    if (!tapped) {
+                        tapped = true;
+                        tapTimer = setTimeout(() => {
+                            tapped = false;
+                        }, 300);
+                        
+                        // Tampilkan overlay di HP saat tap
+                        const overlay = this.querySelector('.post-overlay');
+                        overlay.style.display = 'flex';
+                        overlay.style.opacity = '1';
+                    } else {
+                        clearTimeout(tapTimer);
+                        tapped = false;
+                        // Double tap = like
+                        const heartIcon = this.querySelector('.fa-heart');
+                        const likesCount = this.querySelector('.post-stats span:first-child');
+                        
+                        heartIcon.style.color = '#ff375e';
+                        heartIcon.style.transform = 'scale(1.3)';
+                        
+                        let currentLikes = parseInt(likesCount.textContent.replace(/,/g, '').match(/\d+/)[0]);
+                        let newLikes = currentLikes + 1;
+                        let formattedLikes = newLikes.toLocaleString('id-ID');
+                        
+                        likesCount.innerHTML = `<i class="fas fa-heart" style="color:#ff375e"></i> ${formattedLikes}`;
+                        
+                        setTimeout(() => {
+                            heartIcon.style.transform = 'scale(1)';
+                        }, 300);
+                    }
+                });
+                
+                // Sembunyikan overlay saat tap di luar
+                document.addEventListener('touchstart', function(e) {
+                    if (!post.contains(e.target)) {
+                        const overlay = post.querySelector('.post-overlay');
+                        overlay.style.opacity = '0';
+                        setTimeout(() => {
+                            overlay.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }
+        });
+        
+        // Edit profile button
+        document.querySelector('.btn-primary').addEventListener('click', function() {
+            showNotification('Fitur edit profile akan membuka halaman pengaturan profil');
+        });
+        
+        // Follow button functionality (both in profile header and quick actions)
+        const followButtons = document.querySelectorAll('#follow-action, .profile-actions-row .btn-primary');
+        let isFollowing = false;
+        let followersCount = 30500000;
+        
+        followButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (isFollowing) {
+                    // Update button text
+                    if (this.classList.contains('quick-action-item')) {
+                        this.querySelector('.quick-action-label').textContent = 'Follow';
+                        this.querySelector('.quick-action-icon i').className = 'fas fa-user-plus';
+                        // Ikon tetap hitam
+                        this.querySelector('.quick-action-icon i').style.color = '#262626';
+                    } else {
+                        this.textContent = 'Follow';
+                        this.classList.add('btn-primary');
+                    }
+                    
+                    followersCount--;
+                    document.querySelectorAll('.stat-number')[1].textContent = formatNumber(followersCount);
+                    isFollowing = false;
+                    showNotification('Anda berhenti mengikuti RilarilAcademy');
+                } else {
+                    // Update button text
+                    if (this.classList.contains('quick-action-item')) {
+                        this.querySelector('.quick-action-label').textContent = 'Following';
+                        this.querySelector('.quick-action-icon i').className = 'fas fa-user-check';
+                        // Ikon tetap hitam
+                        this.querySelector('.quick-action-icon i').style.color = '#262626';
+                    } else {
+                        this.textContent = 'Following';
+                        this.classList.remove('btn-primary');
+                    }
+                    
+                    followersCount++;
+                    document.querySelectorAll('.stat-number')[1].textContent = formatNumber(followersCount);
+                    isFollowing = true;
+                    showNotification('Anda sekarang mengikuti RilarilAcademy');
+                }
+            });
+        });
+        
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1).replace('.0', '') + 'JT';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(1).replace('.0', '') + 'RB';
+            }
+            return num.toString();
+        }
+        
+        // Share Profile Modal
+        const shareModal = document.getElementById('share-modal');
+        const shareProfileBtn = document.getElementById('share-profile-btn');
+        const shareAction = document.getElementById('share-action');
+        const closeModal = document.getElementById('close-modal');
+        
+        [shareProfileBtn, shareAction].forEach(button => {
+            button.addEventListener('click', function() {
+                shareModal.style.display = 'flex';
+            });
+        });
+        
+        closeModal.addEventListener('click', function() {
+            shareModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', function(event) {
+            if (event.target === shareModal) {
+                shareModal.style.display = 'none';
+            }
+        });
+        
+        // Share options functionality
+        document.getElementById('share-link').addEventListener('click', function() {
+            navigator.clipboard.writeText('https://instagram.com/RilarilAcademy')
+                .then(() => {
+                    showNotification('Link profil berhasil disalin!');
+                    shareModal.style.display = 'none';
+                })
+                .catch(err => {
+                    console.error('Error copying text: ', err);
+                });
+        });
+        
+        document.getElementById('share-qr').addEventListener('click', function() {
+            showNotification('Fitur QR Code akan membuka generator QR untuk profil ini');
+            shareModal.style.display = 'none';
+        });
+        
+        document.getElementById('share-message').addEventListener('click', function() {
+            showNotification('Fitur Share to Direct akan membuka halaman Instagram Direct');
+            shareModal.style.display = 'none';
+        });
+        
+        document.getElementById('share-other').addEventListener('click', function() {
+            showNotification('Fitur Share to Other Apps akan membuka pilihan aplikasi untuk berbagi');
+            shareModal.style.display = 'none';
+        });
+        
+        // Message action button
+        document.getElementById('message-action').addEventListener('click', function() {
+            const phoneNumber = '62895384092355';
+            const message = 'Hallo ada yang ingin saya tanyakan tentang Rilaril Academy';
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
+        
+        // Mention action button
+        document.getElementById('mention-action').addEventListener('click', function() {
+            showNotification('Fitur Mention akan menampilkan cara untuk mention @RilarilAcademy');
+        });
+        
+        // Email action button
+        document.getElementById('email-action').addEventListener('click', function() {
+            const email = 'AcademyRilaril@gmail.com';
+            const subject = 'Pertanyaan tentang Rilaril Academy';
+            const body = 'Halo, saya tertarik dengan Rilaril Academy dan ingin mengetahui lebih lanjut.';
+            
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+        
+        // Notification bell functionality
+        const notificationBell = document.querySelector('.fa-bell');
+        const notificationBadge = document.querySelector('.notification-badge');
+        
+        notificationBell.addEventListener('click', function() {
+            showNotification('Membuka halaman notifikasi');
+            notificationBadge.style.display = 'none';
+        });
+        
+        // Highlight items click events
+        document.querySelectorAll('.highlight-item').forEach((item, index) => {
+            item.addEventListener('click', function() {
+                const labels = ['Labs', 'Kantin', 'Culture Hub', 'class', 'New'];
+                showNotification(`Membuka highlight: ${labels[index]}`);
+            });
+        });
+        
+        // Touch events untuk mobile
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.Activity-item, .highlight-item, .tab-button, .share-option').forEach(button => {
+                button.style.cursor = 'pointer';
+            });
+        }
+        
+        // Animasi hover untuk quick actions
+        document.querySelectorAll('.quick-action-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.querySelector('.quick-action-item i').style.transform = 'scale(1.2)';
+                this.querySelector('.quick-action-item i').style.transition = 'transform 0.2s';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.querySelector('.quick-action-item i').style.transform = 'scale(1)';
+            });
+        });
+        
+        // Fungsi untuk menampilkan notifikasi
+        function showNotification(message) {
+            // Cek apakah sudah ada notifikasi sebelumnya
+            let existingNotification = document.querySelector('.custom-notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            // Buat elemen notifikasi
+            const notification = document.createElement('div');
+            notification.className = 'custom-notification';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // Hapus notifikasi setelah 3 detik
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
